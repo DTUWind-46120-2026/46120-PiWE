@@ -14,13 +14,11 @@ In a team of 2 to 3, create, review, and merge two “feature branches” such t
 ## Homework due next week
 
 These instructions intentionally do not spell out every step. A good portion
-of scientific programming is finding/utilizing tutorials and guides online. We also expect you to
-collaborate with your group members and, of course, post in the Slack chat or come to office hours as needed.
+of scientific programming is finding/utilizing tutorials and guides online. Collaborate with group members and, of course, post in the Slack chat or come to office hours as needed.
 You are done at the end of Part 3, when all PRs are merged and the tests pass.
 
-<div style="background:white; display:inline-block; padding:10px;">
-  <img src="overview-homework.png" alt="Overview of steps" width="604" height="355">
-</div>
+<img src="overview-homework.png" alt="Overview of steps" width="604" height="355">
+
 
 ### PART 1: In class with P0 Team
 
@@ -33,17 +31,17 @@ You are done at the end of Part 3, when all PRs are merged and the tests pass.
 1. Other group members should now click the same link on Learn for the GitHub assignment BUT join the existing team, "P0 X".  
    * If you are asked to link your GitHub account to a "student identifier", the identifier should be your student ID or DTU username.  
 1. Everyone clones the new team repo locally to their computer.  
+1. Discuss with your team:  
+   * Who will (1) work on and who will (2) review which feature branches.  
+      * An author of a feature branch may not be the reviewer of that branch.  
+   * If you will complete Part 2 together, individually, or some blend of the two. Remember pair programming is encouraged!  
+   * When you will meet to complete Part 3 and whether you will meet physically or virtually.  
 1. Run the week1 test, which should FAIL for now:  
     * Open Anaconda prompt.  
     * Change directory to your team repo.  
     * Run pytest on the week1 test: `pytest test_week1.py`.  
     * There should be some white and red text and notes about failures, like this:  
       <img src="screenshot_fail.png" alt="Failing test" width="550" height="60">  
-1. Discuss with your team:  
-   * Who will work on and who will review which feature branches.  
-      * An author of a feature branch may not be the reviewer of that branch.  
-   * If you will complete Part 2 together, individually, or some blend of the two. Remember pair programming is encouraged!  
-   * When you will meet to complete Part 3 and whether you will meet physically or virtually.  
 1. Move onto the next part.
 
 ### PART 2: Individually or with your team
@@ -55,9 +53,9 @@ Work in other parts is distributed per team's in-class discussion (Part 1).
 
 *NB: In general, you should not edit any test files provided by the instructors.*
 
-1. Re-run the week1 tests using pytest, if you do not have the Anaconda Prompt still open.  
+1. Re-run the week1 tests using pytest if you do not still have the Anaconda Prompt open.  
 1. Open the `test_week1.py` file in VS Code.  
-1. Look through the functions. In your own words, what is each function doing?  
+1. Look through the functions. How many tests are there? In your own words, what is each function doing?  
 1. Compare the pytest output to the functions. In your own words, why is each test failing? What could you do to make each test pass?  
 
 #### B: Watch videos/tutorials
@@ -78,26 +76,26 @@ Work in other parts is distributed per team's in-class discussion (Part 1).
 1. Create a folder called `preclass_assignment` in the top level of the repo. In this folder, place your solution to the preparatory Python exercises you completed before Week 1.
 1. Add/commit your code to the branch.  
 1. Push your branch to GitHub.  
-1. Open a Pull Request (PR) for your feature branch and assign one of your group members as a reviewer.  
+1. Open a Pull Request (PR) for your feature branch and assign the pre-agreed group member as the reviewer.  
 
 #### D: Make feature branch/PR with answers to git questions
 
-*Looking for a challenge? Have 2+ team members collaboratively work on GitAnswers.md. Whether this means different-author commits on the same branch or multiple PRs is up to you. Bonus points if you get merge conflicts!*
+*Looking for a challenge? Have 2+ team members collaboratively work on GitAnswers.md. Whether this means different-author commits on the same branch or multiple PRs is up to you. Bonus points if you create/resolve merge conflicts!*
 
 1. Create a new branch to add your answers to git questions and name it something that describes the feature this branch is implementing (e.g., `add-gitanswers`).  
 1. Create a text file called `GitAnswers.md` in the top level of the repo, add your answers to the
    the git questions below, and push it.  
-1. Open a Pull Request (PR) for your feature branch and assign one of your group members as a reviewer.  
+1. Open a Pull Request (PR) for your feature branch and assign the pre-agreed group member as the reviewer.  
 
 ### PART 3: Together with P0 Team
 
 Review and merge the feature branches. Make sure you watched the tutorial on how to review a PR on GitHub.
 
-*NB: You don't always need to review PRs synchronously as a team. But it's good practice when getting started or with complex PRs.*
+*NB: You don't always need to review PRs synchronously as a team. But it's good practice when getting started with PRs or with complex PRs.*
 
 1. Choose one of the open PRs.  
-1. The reviewer of a PR shows their screen and goes through the Conversation, Commits, and Files Changed in the PR. Discuss with the team.  
-1. The reviewer starts a Review based on the discussion with the team. The review can be Comment, Approve, or Request changes at the reviewer's discretion.  
+1. The reviewer of a PR shows their screen and goes through the "Conversation", "Commits", and "Files Changed" tabs in the PR. Discuss with the team.  
+1. The reviewer starts a Review based on the discussion with the team. The final review decision can be Comment, Approve, or Request changes at the reviewer's discretion.  
 1. If any changes are requested, the author of the PR addresses them.  
 1. Once the PR is eventually approved, the author can merge it.  
 1. All team members update their local copies of `main` branch.  
