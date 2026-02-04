@@ -14,7 +14,7 @@ In a team of 2 to 3, create, review, and merge two “feature branches” such t
 ## Homework due next week
 
 These instructions intentionally do not spell out every step. A good portion
-of scientific programming is finding/utilizing tutorials and guides online. Collaborate with group members and, of course, post in the Slack chat or come to office hours as needed.
+of scientific programming is finding/utilizing tutorials and guides online. Work together with your team and, of course, post in the Slack chat or come to office hours as needed.
 You are done at the end of Part 3, when all PRs are merged and the tests pass.
 
 <img src="overview-homework.png" alt="Overview of steps" width="604" height="355">
@@ -32,7 +32,7 @@ You are done at the end of Part 3, when all PRs are merged and the tests pass.
    * If you are asked to link your GitHub account to a "student identifier", the identifier should be your student ID or DTU username.  
 1. Everyone clones the new team repo locally to their computer.  
 1. Discuss with your team:  
-   * Who will (1) work on and who will (2) review which feature branches.  
+   * Who will (1) author and who will (2) review which feature branches.  
       * An author of a feature branch may not be the reviewer of that branch.  
    * If you will complete Part 2 together, individually, or some blend of the two. Remember pair programming is encouraged!  
    * When you will meet to complete Part 3 and whether you will meet physically or virtually.  
@@ -42,7 +42,6 @@ You are done at the end of Part 3, when all PRs are merged and the tests pass.
     * Run pytest on the week1 test: `pytest test_week1.py`.  
     * There should be some white and red text and notes about failures, like this:  
       <img src="screenshot_fail.png" alt="Failing test" width="550" height="60">  
-1. Move onto the next part.
 
 ### PART 2: Individually or with your team
 
