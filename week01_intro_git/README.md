@@ -1,6 +1,6 @@
 # PiWE Week 1: Course introduction and git/GitHub
 
-Slides: in this folder.
+Slides: to be pushed.
 
 ## Git: Distributed Version Management
 
@@ -30,6 +30,8 @@ You are done at the end of Part 3, when all PRs are merged and the tests pass.
    * If you are asked to link your GitHub account to a "student identifier", the identifier should be your student ID or DTU username.  
 1. Other group members should now click the same link on Learn for the GitHub assignment BUT join the existing team, "P0 X".  
    * If you are asked to link your GitHub account to a "student identifier", the identifier should be your student ID or DTU username.  
+1. On the GitHub page for your team repo, click the "Star" button in the upper right corner.  
+   * Now you can always find the repo on GitHub: click your profile icon in upper right corner and "Stars".  
 1. Everyone clones the new team repo locally to their computer.  
 1. Discuss with your team:  
    * Who will (1) author and who will (2) review which feature branches.  
