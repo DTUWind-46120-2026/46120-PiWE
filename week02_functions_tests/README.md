@@ -19,8 +19,8 @@ what is expected.
 
 ## Homework due next week
 
-These instructions guide you through a specific git workflow, which is visualized below*.
-If you want to try a git flow that is more sophisticated but a little more complex, see [Better git flow](#extra-credit-better-git-flow).
+These instructions guide you through a simple git workflow, which is visualized below.
+If you want to try a git flow that is better but a little more complex, see [Better git flow](#extra-credit-better-git-flow).
 (See also [Notes on "Extra Credit"](#notes-on-extra-credit).)
 
 ```mermaid
@@ -45,8 +45,6 @@ gitGraph
    merge add-tests
 ```
 
-**NB: Your repo's network graph in the end will not look 100% like this due to something called "fast-forwarding".
-But this is a good illustration of the process for this week. :)*
 
 ### Notes on "Extra credit"
 
@@ -58,16 +56,14 @@ of topics. You are welcome to complete, or not complete, parts marked
 
 ### PART 1: As a team, in class
 
-1. Take a team meeting.  
-    * Have someone take notes during the meeting and eventually summarize agreements in a file called `Collaboration.md` in your P0 team repo.  
+1. Team meeting. Have someone take notes during the meeting and summarize your ultimate agreements in a file called `Collaboration.md` in your P0 team repo.  
     * Who will author/review which feature branches?  
     * How are you collaborating during development, if at all? E.g., pair programming?  
     * How will you review the PRs? E.g., will you meet as a team to review PRs, or...?  
     * What is the internal deadlines for accomplishing which tasks?  
     * What will you do if a team member does not meet their deadline?  
     * How are you communicating?  
-    * Note-taker pushes `Collaboration.md`.
-    * Other members pull.  
+    * Note-taker pushes `Collaboration.md`, and other members pull.  
 1. Create your two feature branches off main: `add-code` and `add-tests`.  
     * OR see [Better git flow](#extra-credit-better-git-flow) if you want to try something different.  
 1. In `main`, run the Week 2 tests, which should FAIL at this point:  
@@ -84,6 +80,7 @@ of topics. You are welcome to complete, or not complete, parts marked
 
 The two feature branches should be worked on in parallel.
 However, you cannot merge Part B until Part A has been merged into `main` and then pulled into `add-tests`.
+Work on Part 3 if you are waiting for a teammate to finish Part A.
 
 Distribute tasks in this part per your in-class discussion (Part 1).
 
@@ -97,7 +94,7 @@ Distribute tasks in this part per your in-class discussion (Part 1).
       that you made for the pre-class assignment.  
     * The code in `main.py` should import/demonstrate/execute the functions, similar to
       what is seen on [the description page](https://python-at-risoe.pages.windenergy.dtu.dk/codecamp/preparation.html#Required-exercises).
-      There should be no functions defined in `main.py`.
+      NO functions are defined in `main.py`.
 1. Run `main.py` and make sure it properly imports and executes the
    functions.  
 1. In VS Code, install the [Draw.io Integration](https://marketplace.visualstudio.com/items?itemName=hediet.vscode-drawio)
@@ -115,7 +112,7 @@ Distribute tasks in this part per your in-class discussion (Part 1).
 #### B: Make/review/merge a feature branch/PR with tests
 
 You can begin work on the tests immediately, but you won't be able to complete this feature branch until Part A is merged into `main` and you pull from `main` to `add-tests`.
-Work on Part C if you are waiting for a teammate to finish Part 2A.
+Work on Part 3 if you are waiting for a teammate to finish Part 2A.
 
 *NB: To avoid future merge conflicts in this branch, be VERY careful not to add/commit any files in `preclass_assignment/` while you develop your tests!
 Pull from main as soon as the PR in Part 2A is accepted.*
@@ -233,7 +230,7 @@ gitGraph
     checkout main
     merge add-tests tag:"(fast-forward)"
 ```
-*NB: Your repo's network graph will not look exactly like this due to something called "fast-forwarding". But this is a good illustration of the process for this week. :)*
+
 
 ### Better feature branches
 
@@ -252,7 +249,7 @@ You can also throw rebasing into this flow.
 ## Extra credit: test goldilocks with parametrization
 
 Update `test_goldilocks()` to test all edge cases shown in
-[the description page](https://python-at-risoe.pages.windenergy.dtu.dkcodecamp/preparation.html#2.-If/else-statements).
+[the description page](https://python-at-risoe.pages.windenergy.dtu.dk/codecamp/preparation.html#2.-If/else-statements).
 You could do this in a few different ways:  
  * (Not great) Copy/pasting the function contents and updating the input/expected
    output accordingly. Gets the job done, but messy code.  
@@ -262,7 +259,6 @@ You could do this in a few different ways:
 
 ## Videos, tutorials, and other resources
 
-* [PiWE tutorials (Jupyter notebooks) on numpy, matplotlib, pands](https://github.com/DTUWindEducation/46120-PiWE/tree/main/tutorials_scientific_python)  
 * [Tutorial on assert statements](https://www.w3schools.com/python/ref_keyword_assert.asp)  
 * [Introduction to Python functions, including return values and keyword arguments](https://openstax.org/books/introduction-python-programming/pages/6-introduction)  
 * [Short overview on Given, When, Then and connection to other testing concepts](https://martinfowler.com/bliki/GivenWhenThen.html)  
