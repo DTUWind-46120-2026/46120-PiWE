@@ -45,7 +45,7 @@ gitGraph
    %% add-tests updates
    checkout add-tests
    commit id: "C4"
-   merge main tag: "merge main"
+   merge main tag: "pull main"
    commit id: "C5"
    commit id: "C6"
 
@@ -204,17 +204,10 @@ For even more of a challenge, and for getting practice with resolving merge comm
 
 ### With rebasing
 
-The method presented pulls from `main` into `add-tests`, which is not ideal for branches with large number of commits (see [here](https://gwilym.dev/2021/03/git-rebase-like-a-pro/#1-my-pr-has-a-merge-conflict)).
+The simple workflow above pulls from `main` into `add-tests`, which is not ideal for branches with large number of commits (see [here](https://gwilym.dev/2021/03/git-rebase-like-a-pro/#1-my-pr-has-a-merge-conflict)).
 It's  better to use what is called "rebasing", where git attempts to rewrite your branch's history such that the changes you made are added instead to new commits from the other branch.
 
-The modified git diagram with rebasing is shown below.
-
-To try rebasing, look through this excellent article and follow the instructions: [Git rebase like a pro](https://gwilym.dev/2021/03/git-rebase-like-a-pro/).
-Once you have successfully rebased, push your branch with its rewritten history:  
-`git push --force-with-lease`
-
-*NB: Normally GitHub would reject a push if the history has changed.
-The `--force-with-lease` option tells GitHub to accept the new history, but the push will fail if the branch has new commits from someone else.*
+With rebasing, your final git history will look like this:
 
 ```mermaid
 ---
@@ -246,10 +239,17 @@ gitGraph
    merge add-tests-rebased
 ```
 
+To try rebasing, look through this excellent article and follow the instructions: [Git rebase like a pro](https://gwilym.dev/2021/03/git-rebase-like-a-pro/).
+Once you have successfully rebased, push your branch with its rewritten history:  
+`git push --force-with-lease`
+
+*NB: Normally GitHub would reject a push if the history has changed.
+The `--force-with-lease` option tells GitHub to accept the new history, but the push will fail if the branch has new commits from someone else.*
+
 
 ### Better feature branches
 
-In the default workflow in the description above, the person(s) developing the tests must wait for the person writing the code.
+In the simple workflow described above, the person(s) developing the tests must wait for the person writing the code.
 This is not good: then the person writing the test is not the person who wrote the function, plus there is a bottleneck in development. Not agile!
 
 It would be better if the different feature branches were split by function(s).
