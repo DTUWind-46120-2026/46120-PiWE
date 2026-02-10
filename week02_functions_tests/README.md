@@ -239,7 +239,7 @@ gitGraph
     commit
     commit
     checkout main
-    merge add-code
+    merge add-code tag:"(fast-forward)"
     checkout add-tests
     commit
     commit
@@ -247,8 +247,9 @@ gitGraph
     commit id:"rebased-1" tag:"rebased on main"
     commit id:"rebased-2"
     checkout main
-    merge add-tests
+    merge add-tests tag:"(fast-forward)"
 ```
+*NB: Your repo's network graph will not look exactly like this due to something called "fast-forwarding". But this is a good illustration of the process for this week. :)*
 
 ### Better feature branches
 
