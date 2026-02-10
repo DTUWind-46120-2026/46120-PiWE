@@ -41,6 +41,7 @@ gitGraph
    commit
    commit
    merge main
+   commit
    checkout main
    merge add-tests
 ```
@@ -227,6 +228,7 @@ gitGraph
     checkout add-tests
     commit id:"rebased-1" tag:"rebased on main"
     commit id:"rebased-2"
+    commit id:"rebased-3"
     checkout main
     merge add-tests tag:"(fast-forward)"
 ```
