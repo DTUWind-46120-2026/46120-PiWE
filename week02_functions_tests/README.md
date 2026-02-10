@@ -182,3 +182,29 @@ of topics. You are welcome to complete, or not complete, parts marked
 * [Introduction to Python functions, including return values and keyword arguments](https://openstax.org/books/introduction-python-programming/pages/6-introduction)  
 * [Short overview on Given, When, Then and connection to other testing concepts](https://martinfowler.com/bliki/GivenWhenThen.html)  
 * [A gentle introduction to testing with pytest](https://bas.codes/posts/python-pytest-introduction)  
+
+## With rebasing
+
+```mermaid
+---
+title: Git diagram for 46120 Week 2 (with rebase)
+---
+gitGraph
+    commit
+    commit
+    branch add-code
+    branch add-tests
+    checkout add-code
+    commit
+    commit
+    checkout main
+    merge add-code
+    checkout add-tests
+    commit
+    commit
+    checkout add-tests
+    commit id:"rebased-1" tag:"rebased on main"
+    commit id:"rebased-2"
+    checkout main
+    merge add-tests
+```
