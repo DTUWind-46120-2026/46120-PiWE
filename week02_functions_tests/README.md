@@ -39,8 +39,8 @@ gitGraph
    merge add-code
    checkout add-tests
    commit
-   commit
    merge main
+   commit
    commit
    checkout main
    merge add-tests
