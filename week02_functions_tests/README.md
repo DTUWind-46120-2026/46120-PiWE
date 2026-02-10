@@ -40,7 +40,7 @@ gitGraph
 
    %% merge add-code into main
    checkout main
-   merge add-code tag: "merge add-code"
+   merge add-code
 
    %% add-tests updates
    checkout add-tests
@@ -48,8 +48,10 @@ gitGraph
    merge main tag: "merge main"
    commit id: "C5"
    commit id: "C6"
+
+   %% merge into main
    checkout main
-   merge add-tests tag: "merge add-tests"
+   merge add-tests
 ```
 
 
@@ -219,24 +221,29 @@ The `--force-with-lease` option tells GitHub to accept the new history, but the 
 title: Git diagram for 46120 Week 2 (with rebase)
 ---
 gitGraph
-    commit
-    commit
-    branch add-code
-    branch add-tests
-    checkout add-code
-    commit
-    commit
-    checkout main
-    merge add-code tag:"(fast-forward)"
-    checkout add-tests
-    commit
-    commit
-    checkout add-tests
-    commit id:"rebased-1" tag:"rebased on main"
-    commit id:"rebased-2"
-    commit id:"rebased-3"
-    checkout main
-    merge add-tests tag:"(fast-forward)"
+   commit id: "C0"
+   commit id: "C1"
+   branch add-code
+
+   %% add-code updates
+   checkout add-code
+   commit id: "C2"
+   commit id: "C3"
+
+   %% merge add-code into main
+   checkout main
+   merge add-code
+ 
+   %% history after rebasing
+   branch add-tests-rebased
+   checkout add-tests-rebased
+   commit id:"C4'" 
+   commit id:"C5'" 
+   commit id:"C6'" 
+ 
+   %% merge into main
+   checkout main
+   merge add-tests-rebased
 ```
 
 
