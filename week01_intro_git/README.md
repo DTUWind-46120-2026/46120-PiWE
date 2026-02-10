@@ -1,6 +1,6 @@
 # PiWE Week 1: Course introduction and git/GitHub
 
-Slides: to be pushed.
+Slides: in this folder.
 
 ## Git: Distributed Version Management
 
