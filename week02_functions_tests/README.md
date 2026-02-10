@@ -28,22 +28,28 @@ If you want to try a git flow that is better but a little more complex, see [Bet
 title: Git diagram for 46120 Week 2
 ---
 gitGraph
-   commit
-   commit
+   commit id: "C0"
+   commit id: "C1"
    branch add-code
    branch add-tests
+
+   %% add-code updates
    checkout add-code
-   commit
-   commit
+   commit id: "C2"
+   commit id: "C3"
+
+   %% merge add-code into main
    checkout main
-   merge add-code
+   merge add-code tag: "merge add-code"
+
+   %% add-tests updates
    checkout add-tests
-   commit
-   merge main
-   commit
-   commit
+   commit id: "C4"
+   merge main tag: "merge main"
+   commit id: "C5"
+   commit id: "C6"
    checkout main
-   merge add-tests
+   merge add-tests tag: "merge add-tests"
 ```
 
 
