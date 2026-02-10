@@ -1,21 +1,27 @@
 # PiWE Week 2: Functions and Tests
 
-TA office hours: Mondays and Wednesdays from 13:00 to 14:30.
-
 Slides: here in this subfolder.
 
-## Overview
+## Overall objectives
+
+1. Rearrange code in `preclass_assignment/` and write tests that correctly test the functions there.  
+1. Draw black-box diagrams of functions.  
+1. Complete tutorials on scientific Python packages as preparation for next
+week.
+
+## Functions & tests
 
 Functions are a way to bundle code that is meant to be executed multiple
 times, but with different values. A test is a kind of function that uses an
 assert statement to check whether the behaviour of a part of code matches
 what is expected.
 
-This week, you will reorganize your pre-class assignment
-code into functions and a main script, and you will update the Week 2 tests
-to check whether your functions work as expected. You will finish off by
-doing some tutorials on scientific Python packages as preparation for next
-week.
+
+## Homework due next week
+
+These instructions guide you through a specific git workflow, which is visualized below.
+If you want to try something more sophisticated but a little more complex, see the section at end about rebasing.
+(See also section *Notes on "Extra Credit"*.)
 
 ```mermaid
 ---
@@ -39,13 +45,6 @@ gitGraph
    merge add-tests
 ```
 
-## Homework due next week
-
-Parts 2A and 2B are decoupled from each other and can be done in
-parallel. We recommend you split into subteams, each subteam works on
-their part in branches, then merge the solutions when finished.
-We expect you will need to merge the Part 2A branch into Part 2B
-partway through the Part 2B assignment.
 
 ### Notes on "Extra credit"
 
@@ -58,15 +57,17 @@ of topics. You are welcome to complete, or not complete, parts marked
 ### PART 1: As a team, in class
 
 1. Individually, fill out the [46120 Pre-evaluation](https://evaluering.dtu.dk/) (3 minutes).  
-1. Individually, read through this homework description.  
-1. Take a team meeting and:  
-    * Create a file in your team repo called `Collaboration.md`.  
-    * Discuss: Will you split into subteams? In your subteams, will you pair-program?
-      Meet physically or virtually?    
-    * Discuss: What is your branch structure? One per person? One per subteam?  
-    * Write your decisions in `Collaboration.md` and push it.  
-    * Other team members, pull `Collaboration.md`
-1. Run the Week 2 tests, which should FAIL at this point:  
+1. Take a team meeting.  
+    * Who is authoring/reviewing which feature branches?  
+    * How are you collaborating during development, if at all? E.g., pair programming?  
+    * How will you review the PRs? E.g., will you meet as a team to review PRs, or...?  
+    * What is the internal deadlines for accomplishing which tasks?  
+    * What will you do if a team member does not meet their deadline?  
+    * How are you communicating?  
+    * *(Optional but recommended)* One member summarizes the agreements in `Collaboration.md` file in your P0 team repo and pushes. Other members pull.  
+1. Create your two feature branches off main: `add-code` and `add-tests`.  
+    * See bottom of page if you want to try a different git flow.  
+1. In `main`, run the Week 2 tests, which should FAIL at this point:  
     * Open an Anaconda Prompt.  
     * Change directory to your local copy of your team's repo.  
     * Run pytest on the week2 test: `pytest test_week2.py`.  
@@ -76,12 +77,20 @@ of topics. You are welcome to complete, or not complete, parts marked
       the tests to fail? (Do NOT try to fix the error yet! Just try
       to diagnose.)
 
-### PART 2A: Restructure/diagram your pre-class code
+### PART 2: Individually and/or with your team
 
-1. Create and checkout into a new branch, you choose the name.  
+The two feature branches should be worked on in parallel.
+However, you cannot finish Part B until Part A has been merged into `main`.
+
+Distribute tasks in this part per your in-class discussion (Part 1).
+
+#### A: Make/review/merge a feature branch/PR with restructured code & diagrams
+
+1. Checkout into feature branch `add-code`.  
 1. Restructure the code in `preclass_assignment` in your team's repo such that:  
-    * There are two files, called `functions.py` and `main.py`.
-    * The only code in `functions.py` is the [five functions](https://python-at-risoe.pages.windenergy.dtu.dk/codecamp/preparation.html#Required-exercises)
+    * There are ONLY two files in the folder: `functions.py` and `main.py`.
+      If you prefer `main.py` to be a Jupyter notebook, that's fine.
+    * The ONLY code in `functions.py` is the [five functions](https://python-at-risoe.pages.windenergy.dtu.dk/codecamp/preparation.html#Required-exercises)
       that you made for the pre-class assignment.  
     * The code in `main.py` should import/demonstrate/execute the functions, similar to
       what is seen on [the description page](https://python-at-risoe.pages.windenergy.dtu.dk/codecamp/preparation.html#Required-exercises).
@@ -97,11 +106,18 @@ of topics. You are welcome to complete, or not complete, parts marked
       Remember to include types of inputs and outputs!
     * Note that if a function does not explicitly return an output, then
       the return value is `None`. 
-1. Push your branch.  
+1. Push your branch and open a PR.  
+1. A teammate reviews and merges your PR as agreed in your team.  
 
-### PART 2B: Analyse/update tests
+#### B: Make/review/merge a feature branch/PR with tests
 
-1. Create and checkout into a new branch, you choose the name.  
+You can begin work on the tests immediately, but you won't be able to complete this feature branch until Part A is merged into `main` and you pull from `main` to `add-tests`.
+
+*NB: To avoid future merge conflicts in this branch, be VERY careful not to add/commit any files in `preclass_assignment/` while you develop your tests! Or, pull from main as soon as the PR in Part 2A is accepted.*
+
+**Write first test**
+
+1. Checkout into feature branch `add-tests`.  
 1. Open `test_week2.py` in VS Code.  
 1. Read through the functions and docstrings (triple-quote text below
    the function definition).  
@@ -114,14 +130,21 @@ of topics. You are welcome to complete, or not complete, parts marked
       [the description page](https://python-at-risoe.pages.windenergy.dtu.dk/codecamp/preparation.html#4.-While-loops).  
     * Update the assert statement, again using `test_square_list()`
       as inspiration.  
-1. If Part 2A is complete, merge in the branch from Part 2A.  
-    * If you were able to merge, run `pytest` again. Take time and read
+1. If Part 2A has been merged into `main`, pull updates from `main` into your branch:  
+    * `git checkout add-tests`  
+    * `git pull origin main`  
+    * NB: If you committed any changes to `preclass_assignment/`, a merge conflict will arise here.
+    * If you were able to pull from main, run `pytest` again. Take time and read
       the output from pytest carefully. How many tests are passing now?
       Which ones are still failing?  
+1. If Part 2A has NOT yet been merged into `main`, proceed with writing the other tests as best you can. Pull from `main` using above instructions when it has been merged.  
+
+**Write other tests**
+
 1. Write the test for `test_clean_pitch()`:  
     * Use `test_fibonacci_stop()` and `test_square_list()` as
       inspiration, though make changes as needed.  
-1. If you have merged in the branch from Part 2A, re-run `pytest` and
+1. If Part 2A is merged to `main` and pulled to your branch, re-run `pytest` and
    examine the test output. Are your test functions passing?  
 1. Write the test in `test_goldilocks()` for one value:  
     * Choose a single test input and expected print from 
@@ -140,11 +163,11 @@ of topics. You are welcome to complete, or not complete, parts marked
         - `test_greet()` is not perfect! We should have defined an
           `exp_print` variable in `# given` for the expected print output,
           `Hello, world!\n`. Oops!  
-1. If you have merged in the branch from Part 2A, re-run `pytest` and
-   examine the test output. Are all your test functions passing?  
+1. If Part 2A is merged to `main` and pulled to your branch, re-run `pytest` and
+   examine the test output. Are your test functions passing?  
 1. Extra credit: update `test_goldilocks()` to check the other test cases. See
    details in "Extra credit" below.  
-1. If all your test functions are passing, push your branch.  
+1. If all your test functions are passing, open a PR.  
 
 ### PART 3: Individually
 
@@ -159,21 +182,20 @@ of topics. You are welcome to complete, or not complete, parts marked
     * `3b-exercise_matplotlib.ipynb`  
 1. Once you have finished these tutorials, you're done for this week!  
 
-### Extra credit
+### Extra credit: better git flow
 
-1. Update `test_goldilocks()` to test all edge cases shown in
-   [the description page](https://python-at-risoe.pages.windenergy.dtu.dk/codecamp/preparation.html#2.-If/else-statements).
-   You could do this in a few different ways:  
-    * (Not great) Copy/pasting the function contents and updating the input/expected
-      output accordingly. Gets the job done, but messy code.  
-    * (Okay) Implementing a for loop in your test function. Ask a TA/instructor if you
-      need help iterating over two lists at once, or google the `zip()` function.  
-    * (Most elegant) Read up on and implement a [pytest parametrization](https://docs.pytest.org/en/stable/how-to/parametrize.html).  
-1. Open and read through `test_week1.py`.  
-    * What did each function do? How did they work? You might need to read up on 
-      [`pathlib.path`](https://docs.python.org/3/library/pathlib.html),
-      e.g., [this introduction to it](https://www.datacamp.com/tutorial/comprehensive-tutorial-on-using-pathlib-in-python-for-file-system-manipulation).  
-1. Read through some of the extra material below, depending on what interests you.  
+
+
+### Extra credit: test goldilocks
+
+Update `test_goldilocks()` to test all edge cases shown in
+[the description page](https://python-at-risoe.pages.windenergy.dtu.dkcodecamp/preparation.html#2.-If/else-statements).
+You could do this in a few different ways:  
+ * (Not great) Copy/pasting the function contents and updating the input/expected
+   output accordingly. Gets the job done, but messy code.  
+ * (Okay) Implementing a for loop in your test function. Ask a TA/instructor if you
+   need help iterating over two lists at once, or google the `zip()` function.  
+ * (Most elegant) Read up on and implement a [pytest parametrization](https://docs.pytest.org/en/stable/how-to/parametrize.html).  
 
 ## Videos, tutorials, and other resources
 
@@ -183,7 +205,26 @@ of topics. You are welcome to complete, or not complete, parts marked
 * [Short overview on Given, When, Then and connection to other testing concepts](https://martinfowler.com/bliki/GivenWhenThen.html)  
 * [A gentle introduction to testing with pytest](https://bas.codes/posts/python-pytest-introduction)  
 
-## With rebasing
+## Extra credit: better git flow
+
+The git workflow we use above is not ideal.
+If you want to learn to use git more cleverly, try using rebase (instead of pull).
+For even more of a challenge, and for getting practice with resolving merge commits in a low-stakes situation, use a different feature-branch structure.
+
+
+### With rebasing
+
+The method suggested above of pulling from `main` into `add-tests` is not ideal for branches with large number of commits (see [here](https://gwilym.dev/2021/03/git-rebase-like-a-pro/#1-my-pr-has-a-merge-conflict)).
+It's  better to use what is called "rebasing", where git attempts to rewrite your branch's history such that the changes you made are added instead to new commits from the other branch.
+
+The modified git diagram with rebasing is shown below.
+
+To try rebasing, look through this excellent tutorial and follow the instructions: [Git rebase like a pro](https://gwilym.dev/2021/03/git-rebase-like-a-pro/).
+Once you have successfully rebased, push your branch with its rewritten history:  
+`git push --force-with-lease`
+
+*NB: Normally GitHub would reject a push if the history has changed.
+The `--force-with-lease` option tells GitHub that we have new history, but the push will fail if the branch has new commits from someone else.*
 
 ```mermaid
 ---
@@ -208,3 +249,16 @@ gitGraph
     checkout main
     merge add-tests
 ```
+
+### Better feature branches
+
+In the default workflow in the description above, the person(s) developing the tests must wait for the person writing the code.
+This is not good: then the person writing the test is not the person who wrote the function, and there is a bottleneck.
+
+Instead, it would be better if the different feature branches were split by function(s).
+E.g., branch `add-fxns-1-2-3`, would include the (1) function, (2) black-box diagrams, and (3) tests for functions 1, 2 and 3.
+Then branch `add-fxns-4-5` would include the same for functions 4 and 5.
+The downside, of course, is that this flow may result in many more merge conflicts, because all the feature branches are touching the same files.
+
+If you want to try developing this way, give it a try!
+You can also throw rebasing into this flow.
