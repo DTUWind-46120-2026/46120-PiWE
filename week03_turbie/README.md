@@ -231,18 +231,19 @@ This is extra material if you want more practice or exposure to more advanced to
 
 Suggested:
 
+* Read PDFs in Week 4 folder about simulating homogeneous and forced response of a dynamical system.  
 * Set up the testing panel in VS Code so you your test suite is integrated in VS Code.  
 * Modify `load_turbie_parameters()` such that it also loads variable names from the text file.  
 * Start discussing with your team how you might structure code for last part of CodeCamp projet.
   **NO CODE!** Diagrams/pseudocode/etc. only.
 * Practice setting breakpoints and using VS Code Python debugger.
   Halt the code in `code_week3.py` or in the middle of a function in `codecamp/__init__.py`, inspect and play with variables in the Debug Console, etc.
-  See what variables are defined in which namespaces in the VARIABLES panel.  
-* Enable a linter in VS Code (e.g., `pylint`) and see what it flags in the code you wrote this week.  
+  See what variables are defined in which namespaces in the VARIABLES panel.   
 
 
 Further:
 
+* Enable a linter in VS Code (e.g., `pylint`) and see what it flags in the code you wrote this week. 
 * Watch the "Eigenanalysis" chapter in [CodeCamp Day 2](https://panopto.dtu.dk/Panopto/Pages/Viewer.aspx?id=82d3d6fd-f3ad-420f-abfd-afa000fd43d9) and complete exercise "Calculate Turbie's natural frequency".
 * Watch any other chapters in the [CodeCamp Day 1 videos](https://panopto.dtu.dk/Panopto/Pages/Sessions/List.aspx?folderID=ce2dc79a-9a96-41a1-a048-af9b00bd02dc)
    that seem interesting.
