@@ -13,7 +13,7 @@ networks), and evaluate forecast accuracy.
 
 ## Requirements to pass
 ### Functional requirements
-Your package should be able to:
+As a minimal, your package should be able to:
 1. Load and parse the provided input data.
 
 2. Plot timeseries of a selected variable (like **wind_speed_100m** or 
@@ -43,7 +43,68 @@ using two different ML models (like support vector machine or neural network)
 models using `pickle`.
 
 ### Formal requirements
-Check the general requirements defined for all final projects.
+1. Your final project should have the structure and required files as shown in 
+the following diagram:
+   ```
+   [your_final_project]
+   ├── inputs/
+   │   ├── data_files_we_provide
+   │   └── data_files_you_found (optional)
+   ├── outputs/
+   │   └── data_files_you_generate (no need to push to Github)
+   ├── src/
+   │   └── your_python_package_codes
+   ├── tests/
+   │   └── python_scripts_you_write_for_tests
+   ├── examples/
+   │   ├── main.py (will run in evaluation)
+   │   └── other_example_scripts_you_write (optional)
+   ├── .gitignore
+   ├── LICENSE
+   ├── Collaboration.md
+   ├── README.md
+   ├── pyproject.toml
+   └── any_other_files_you_may_want (optional)
+   ```
+2. Your Python package inside the `src` folder should include at least one 
+class (we will cover class and object oriented programming in week 9).
+
+3. Your Python package should implement the required functions, either as 
+listed in **functional requirements** in the pre-defined projects, or as we 
+agreed on and documented if you work on a custom project.
+
+4. The README file should contains:
+   * A brief overview of the package objective.  
+   * Installation instructions.  
+   * A description of the package architecture, with at least one diagram. 
+   * A description of the class(es) you have implemented in your package, with
+     clear reference to the file name of the code inside `src`.
+   * A description of what peer review (if any) you have implemented.
+
+5. We should be able to install your package successfully following the 
+**Installation instruction** in your `README.md`.
+
+6. Your `main.py` script inside the `examples` folder should demonstrate, in a
+clear and structured manner, how the required functions are called and 
+executed. Here you can copy the listed functional requirements, put them into
+comments, and organize your code accordingly.
+
+7. Your `main.py` script should run successfully and generate the expected 
+results (like plots) in a reasonable time (less than 10 mins). If needed,
+define a "demo" mode and/or use saved intermediate results.
+
+8. Test coverage on your package should be higher than 80%, as evaluated using
+`pytest-cov` on your `src` folder, i.e., by running:
+   ```
+   pytest --cov=src tests/
+   ```
+
+9. pylint score on your package should be higher than 8.0, as evaluated using
+`pylint` on your `src` folder, i.e., by running:
+   ```
+   pylint src/
+   ```
+
 
 ### Other tips
 * You are recommended to use `scikit-learn` to develop this package. 
